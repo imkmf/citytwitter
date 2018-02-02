@@ -1,7 +1,8 @@
 module.exports = {
   entry: './src/citytwitter.ts',
+  target: 'node',
   output: {
-    filename: './dist/bundle.js'
+    filename: './lib/citytwitter.js'
   },
   resolve: {
     extensions: [".ts", ".js"]

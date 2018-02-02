@@ -1,19 +1,19 @@
 ---
 city: Los Angeles
 state: California
-office_of_the_mayor:
-  name: Office of the Mayor
-  permalink: mayor
-  accounts:
-  - name: Eric Garcetti
-    handle: MayorOfLA
-    notes: Official account for the 42nd Mayor of the City of Angels, Eric Garcetti.
-  subsections:
-  - name: Mayor's Projects
-    permalink: mayor_projects
+sections:
+  - name: Office of the Mayor
+    permalink: mayor
     accounts:
-    - name: Mayor's Fund
-      handle: MayorsFundLA
-    - name: LA Great Streets
-      handle: LAGreatStreets
+    - name: Eric Garcetti
+      handle: MayorOfLA
+      notes: Official account for the 42nd Mayor of the City of Angels, Eric Garcetti.
+    subsections:
+    - name: Mayor's Projects
+      permalink: mayor_projects
+      accounts:
+      - name: Mayor's Fund
+        handle: MayorsFundLA
+      - name: LA Great Streets
+        handle: LAGreatStreets
 

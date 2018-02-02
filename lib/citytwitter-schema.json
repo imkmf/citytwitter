@@ -1,0 +1,88 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "Account": {
+            "properties": {
+                "handle": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "notes": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "Section": {
+            "properties": {
+                "accounts": {
+                    "additionalItems": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/Account"
+                            }
+                        ]
+                    },
+                    "items": [
+                        {
+                            "$ref": "#/definitions/Account"
+                        }
+                    ],
+                    "minItems": 1,
+                    "type": "array"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "permalink": {
+                    "type": "string"
+                },
+                "subsections": {
+                    "additionalItems": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/Section"
+                            }
+                        ]
+                    },
+                    "items": [
+                        {
+                            "$ref": "#/definitions/Section"
+                        }
+                    ],
+                    "minItems": 1,
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "properties": {
+        "city": {
+            "type": "string"
+        },
+        "sections": {
+            "additionalItems": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/Section"
+                    }
+                ]
+            },
+            "items": [
+                {
+                    "$ref": "#/definitions/Section"
+                }
+            ],
+            "minItems": 1,
+            "type": "array"
+        },
+        "state": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}
+
