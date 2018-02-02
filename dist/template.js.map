@@ -1,0 +1,1 @@
+{"version":3,"file":"template.js","sourceRoot":"","sources":["../src/template.js"],"names":[],"mappings":";;AAAA,IAAM,QAAQ,GAAG,wCAEhB,CAAA;AAED,kBAAe,QAAQ,CAAA","sourcesContent":["const template = `\n<h1><%= city %>, <%= state %></h1>\n`\n\nexport default template\n"]}

@@ -2,7 +2,7 @@ module.exports = {
   entry: './src/citytwitter.ts',
   target: 'node',
   output: {
-    filename: './lib/citytwitter.js'
+    filename: './dist/citytwitter.js'
   },
   resolve: {
     extensions: [".ts", ".js"]

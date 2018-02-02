@@ -2,22 +2,25 @@
   "name": "citytwitter",
   "version": "0.1.0",
   "description": "A tool for querying and displaying official city Twitter accounts",
-  "main": "lib/citytwitter.js",
-  "types": "lib/citytwitter.d.ts",
+  "main": "dist/citytwitter.js",
+  "types": "dist/citytwitter.d.ts",
   "scripts": {
     "build": "npm run tsc && node_modules/.bin/webpack && npm run build_schema",
-    "build_schema": "typescript-json-schema src/citytwitter.ts City -o lib/citytwitter-schema.json",
-    "start": "npm run build && node lib/citytwitter.js",
+    "build_schema": "typescript-json-schema tsconfig.json '*' -o dist/citytwitter-schema.json",
+    "start": "npm run build && node dist/citytwitter.js",
     "tsc": "tsc"
   },
   "devDependencies": {
     "@types/node": "^9.4.0",
     "awesome-typescript-loader": "^3.4.1",
+    "source-map-loader": "^0.2.3",
     "tslint-config-standard": "^7.0.0",
     "typescript": "^2.7.1",
     "webpack": "^3.10.0"
   },
   "dependencies": {
+    "@types/ejs": "^2.5.0",
+    "ejs": "^2.5.7",
     "tslint": "^5.9.1"
   }
 }

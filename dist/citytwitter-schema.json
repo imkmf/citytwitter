@@ -15,6 +15,33 @@
             },
             "type": "object"
         },
+        "City": {
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "sections": {
+                    "additionalItems": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/Section"
+                            }
+                        ]
+                    },
+                    "items": [
+                        {
+                            "$ref": "#/definitions/Section"
+                        }
+                    ],
+                    "minItems": 1,
+                    "type": "array"
+                },
+                "state": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
         "Section": {
             "properties": {
                 "accounts": {
@@ -58,31 +85,6 @@
             },
             "type": "object"
         }
-    },
-    "properties": {
-        "city": {
-            "type": "string"
-        },
-        "sections": {
-            "additionalItems": {
-                "anyOf": [
-                    {
-                        "$ref": "#/definitions/Section"
-                    }
-                ]
-            },
-            "items": [
-                {
-                    "$ref": "#/definitions/Section"
-                }
-            ],
-            "minItems": 1,
-            "type": "array"
-        },
-        "state": {
-            "type": "string"
-        }
-    },
-    "type": "object"
+    }
 }
 
