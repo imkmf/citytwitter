@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "node_modules/.bin/webpack"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.4.1",
+    "typescript": "^2.7.1",
+    "webpack": "^3.10.0"
+  }
+}
