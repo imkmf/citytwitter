@@ -1,6 +1,8 @@
 ---
 city: Los Angeles
 state: California
+meta:
+  contact_url: 'https://twitter.com/imkmf'
 sections:
   - name: Office of the Mayor
     permalink: mayor
@@ -16,4 +18,51 @@ sections:
         handle: MayorsFundLA
       - name: LA Great Streets
         handle: LAGreatStreets
-
+  - name: City Council
+    permalink: city-council
+    accounts:
+      - name: Gil Cedillo
+        handle: gilcedillocd1
+        notes: District 1
+      - name: Paul Krekorian
+        handle: PaulKrekorian
+        notes: District 2
+      - name: Bob Blumenfield
+        handle: BobBlumenfield
+        notes: District 3
+      - name: David Ryu
+        handle: davideryu
+        notes: District 4
+      - name: Paul Koretz
+        handle: PaulKoretzCD5
+        notes: District 5
+      - name: Nury Martinez
+        handle: CD6Nury
+        notes: District 6
+      - name: Monica Rodriquez
+        handle: LadyMRod
+        notes: District 7
+      - name: Marqueece Harris-Dawson
+        handle: mhdcd8
+        notes: District 8
+      - name: Curren Price
+        handle: CurrenDPriceJr
+        notes: District 9
+      - name: Herb Wesson
+        handle: HerbJWesson
+        notes: District 10
+      - name: Mike Bonin
+        handle: mikebonin
+        notes: District 11
+      - name: Mitchell Englander
+        handle: Mitch_Englander
+        notes: District 12
+      - name: "Mitch O'Farrell"
+        handle: MitchOFarrell
+        notes: District 13
+      - name: José Huizar
+        handle: josehuizar
+        notes: District 14
+      - name: Joe Buscaino
+        handle: JoeBuscaino
+        notes: District 15

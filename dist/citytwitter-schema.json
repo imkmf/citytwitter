@@ -20,6 +20,9 @@
                 "city": {
                     "type": "string"
                 },
+                "meta": {
+                    "$ref": "#/definitions/Meta"
+                },
                 "sections": {
                     "additionalItems": {
                         "anyOf": [
@@ -37,6 +40,14 @@
                     "type": "array"
                 },
                 "state": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "Meta": {
+            "properties": {
+                "contact_url": {
                     "type": "string"
                 }
             },

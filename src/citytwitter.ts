@@ -1,5 +1,4 @@
-import { render } from 'ejs'
-import { readFile } from 'fs'
+import { readFile, writeFile } from 'fs'
 
 import template from './template'
 
@@ -16,19 +15,43 @@ export interface Section {
   subsections: [Section];
 }
 
+export interface Meta {
+  contact_url: string;
+}
+
 export interface City {
   city: string;
   state: string;
   sections: [Section];
+  meta?: Meta;
 }
 
-// const logJson = (json: City) => {
-//   console.log(json)
-// }
+const compileHtml = (data: City): string => template(data)
 
-// Should add a function to replace renderHtml:
-// pipeline where we pre-log, validate, post-log, compile, and write
-const compileHtml = (city: City): string => render(template, city)
+const validateJson = (data: City): City => {
+  console.log(`Validated JSON for ${data.city}.`)
+  return data
+}
+
+const pipeline = (data: City): string => {
+  console.log(`Trying to compile HTML for ${data.city}.`)
+  const compiled = compileHtml(data)
+  console.log(`Successfully compiled HTML for ${data.city}.`)
+  writeToFile('dist/index.html', compiled)
+  return compiled
+}
+
+const writeToFile = (filename: string, data: string): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    writeFile(filename, data, err => {
+      if (err) {
+        reject(err)
+      } else {
+        resolve()
+      }
+    })
+  })
+}
 
 const parseFile = (filename: string, callback: ((json: City) => string)): Promise<string> => {
   return new Promise((resolve, reject) => {
@@ -36,14 +59,14 @@ const parseFile = (filename: string, callback: ((json: City) => string)): Promis
       if (err) {
         reject(err)
       } else {
-        const obj: City = JSON.parse(data)
-        const validated = obj
+        const city: City = JSON.parse(data)
+        const validated = validateJson(city)
         resolve(callback(validated))
       }
     })
   })
 }
 
-parseFile('examples/losangeles-short.json', compileHtml)
-  .then((html: string) => console.log(html))
+parseFile('examples/losangeles-short.json', pipeline)
+  .then((_: string) => console.log('Successfully ran citytwitter. Woo!'))
   .catch(err => { throw err })

@@ -62,3 +62,4 @@ typings/
 
 # built output map
 dist/citytwitter.js.map
+dist/index.html
