@@ -61,5 +61,5 @@ typings/
 .next
 
 # built output map
-dist/citytwitter.js.map
-dist/index.html
+dist
+index.html
